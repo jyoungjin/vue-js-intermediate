@@ -34,9 +34,9 @@ export default {
       this.todoItems.splice(index, 1);
     },
     toggleOneItem: function (todoItem, index) {
+      this.todoItems[index].completed = !this.todoItems[index].completed;
       localStorage.removeItem(todoItem.item);
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
-      this.todoItems[index].completed = !this.todoItems[index].completed;
     },
     clearAllItems: function () {
       localStorage.clear();
